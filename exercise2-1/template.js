@@ -1,11 +1,9 @@
 var Template = function(input) {
-    // この関数を実装してください
     this.source = input.source;
 };
 
 Template.prototype = {
     render: function(variables) {
-        // この関数を実装してください
         return this.source.replace(/{%\s*([^%\s}]+)\s*%}/g, function(m0, m1){
             return Util.htmlspecialchars(variables[m1]);
         });
