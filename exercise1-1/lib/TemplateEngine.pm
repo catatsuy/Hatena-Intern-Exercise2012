@@ -21,7 +21,7 @@ sub new {
 
 sub render {
     my ($self, $values) = @_;   # 引数をリファレンスとして受け取る
-    my $file = IO::File->new($self->{file}, 'r');
+    my $file = IO::File->new($self->{file}, 'r') or die 'Could not open ' . $self->{file} . ' ' . $!;
     my $output;
 
     # デリファレンスしてエスケープ
