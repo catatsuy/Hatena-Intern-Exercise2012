@@ -5,7 +5,7 @@ use FindBin::libs;
 
 use TemplateEngine;
 
-my $template = TemplateEngine->new( file => 'templates/test_link.html' );
+my $template = TemplateEngine->new( file => 'templates/main.html' );
 
 print $template->render({
   title   => 'タイトル',

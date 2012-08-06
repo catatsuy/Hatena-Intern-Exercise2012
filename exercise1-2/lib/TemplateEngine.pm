@@ -7,8 +7,6 @@ use IO::File;
 
 use 5.010;
 
-use Data::Dumper;
-
 binmode STDOUT, ':utf8'; # STDOUTをUTF-8ストリーム
 
 # コンストラクタ
@@ -45,8 +43,7 @@ sub render {
             my $context = shift @$arguments;
             given ( $+{action} ) {
                 when ('link') {
-                    my $url = shift @$arguments;
-                    $pre = $` . '<a href="' . $url . '"' ;
+                    $pre = $` . '<a href="' . shift(@$arguments) . '"' ;
                     $suf = '</a>' . $' ;
                     $output .= $pre . &_extract_ref(shift @$arguments) . '>' . $context . $suf;
                 }
